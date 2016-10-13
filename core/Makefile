@@ -2,13 +2,17 @@
 
 # Build system colors
 
+ifneq ($(USE_NINJA),false)
+  BUILD_WITH_COLORS := 0
+endif
+
 ifneq ($(BUILD_WITH_COLORS),0)
-  CL_RED="\033[31m"
-  CL_GRN="\033[32m"
-  CL_YLW="\033[33m"
-  CL_BLU="\033[34m"
-  CL_MAG="\033[35m"
-  CL_CYN="\033[36m"
+  CL_RED="-e \033[31m"
+  CL_GRN="-e \033[32m"
+  CL_YLW="-e \033[33m"
+  CL_BLU="-e \033[34m"
+  CL_MAG="-e \033[35m"
+  CL_CYN="-e \033[36m"
   CL_RST="\033[0m"
 endif
 
